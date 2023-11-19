@@ -18,7 +18,7 @@ class SettingsPage extends StatelessWidget {
               decoration: InputDecoration(
                 prefixIcon: Icon(Icons.computer),
                 labelText: 'IP address',
-                hintText: '192.168.56.100',
+                hintText: 'Enter Master IP',
                 border: OutlineInputBorder(),
               ),
               keyboardType: TextInputType.number,

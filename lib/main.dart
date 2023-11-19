@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:lg_connection/components/reusable_card.dart';
 import 'package:lg_connection/settings_page.dart';
 
 void main() {
@@ -47,7 +48,90 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-      // Rest of your scaffold body
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Expanded(
+            child: Row(
+              children: [
+                Expanded(
+                  child: ReusableCard(
+                    colour: Colors.blue,
+                    onPress: () {},
+                    cardChild: const Center(
+                      child: Text(
+                        'SHUT DOWN',
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: ReusableCard(
+                    colour: Colors.blue,
+                    onPress: () {},
+                    cardChild: const Center(
+                      child: Text(
+                        'SHUT DOWN',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  ),
+                )
+              ],
+            ),
+          ),
+          //
+          Expanded(
+            child: ReusableCard(
+              colour: Colors.blue,
+              onPress: () {},
+              cardChild: const Center(
+                child: Text(
+                  'SHUT DOWN',
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Expanded(
+            child: Row(
+              children: [
+                Expanded(
+                  child: ReusableCard(
+                    colour: Colors.blue,
+                    onPress: () {},
+                    cardChild: const Center(
+                      child: Text(
+                        'SHUT DOWN',
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: ReusableCard(
+                    colour: Colors.blue,
+                    onPress: () {},
+                    cardChild: const Center(
+                      child: Text(
+                        'SHUT DOWN',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  ),
+                )
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
