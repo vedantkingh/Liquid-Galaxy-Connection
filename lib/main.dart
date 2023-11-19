@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
       // Map all the routes
       routes: {
         '/': (context) => HomeScreen(), // Root route
-        '/settings': (context) => SettingsPage(), // Settings route
+        '/settings': (context) => const SettingsPage(), // Settings route
       },
     );
   }

@@ -2,14 +2,16 @@ import 'package:flutter/material.dart';
 import 'components/reusable_card.dart';
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('LG Connection'),
+        title: const Text('LG Connection'),
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.settings),
+            icon: const Icon(Icons.settings),
             onPressed: () {
               // Navigate to the settings page using the named route
               Navigator.pushNamed(context, '/settings');
