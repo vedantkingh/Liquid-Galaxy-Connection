@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'components/reusable_card.dart';
+import '../components/reusable_card.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

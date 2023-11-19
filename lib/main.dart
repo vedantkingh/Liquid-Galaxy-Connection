@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:lg_connection/home_screen.dart';
-import 'package:lg_connection/settings_page.dart';
+import 'package:lg_connection/screens/home_screen.dart';
+import 'package:lg_connection/screens/settings_page.dart';
 
 void main() {
   WidgetsFlutterBinding
