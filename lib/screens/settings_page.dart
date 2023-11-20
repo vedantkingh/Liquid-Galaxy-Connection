@@ -1,21 +1,53 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-class SettingsPage extends StatelessWidget {
+class SettingsPage extends StatefulWidget {
   const SettingsPage({Key? key}) : super(key: key);
+
+  @override
+  _SettingsPageState createState() => _SettingsPageState();
+}
+
+class _SettingsPageState extends State<SettingsPage> {
+  final TextEditingController _ipController = TextEditingController();
+  final TextEditingController _usernameController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _sshPortController = TextEditingController();
+  final TextEditingController _rigsController = TextEditingController();
+
+  @override
+  void dispose() {
+    _ipController.dispose();
+    _usernameController.dispose();
+    _passwordController.dispose();
+    _sshPortController.dispose();
+    _rigsController.dispose();
+    super.dispose();
+  }
+
+  Future<void> _saveSettings() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setString('ipAddress', _ipController.text);
+    await prefs.setString('username', _usernameController.text);
+    await prefs.setString('password', _passwordController.text);
+    await prefs.setString('sshPort', _sshPortController.text);
+    await prefs.setString('numberOfRigs', _rigsController.text);
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Connection Settings'),
+        title: const Text('Connection Settings'),
       ),
-      body: const SingleChildScrollView(
-        padding: EdgeInsets.all(16.0),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             TextField(
-              decoration: InputDecoration(
+              controller: _ipController,
+              decoration: const InputDecoration(
                 prefixIcon: Icon(Icons.computer),
                 labelText: 'IP address',
                 hintText: 'Enter Master IP',
@@ -23,28 +55,32 @@ class SettingsPage extends StatelessWidget {
               ),
               keyboardType: TextInputType.number,
             ),
-            SizedBox(height: 10), // Provides spacing between input fields
+            const SizedBox(height: 10),
             TextField(
-              decoration: InputDecoration(
+              controller: _usernameController,
+              keyboardType: TextInputType.text,
+              decoration: const InputDecoration(
                 prefixIcon: Icon(Icons.person),
                 labelText: 'LG Username',
                 hintText: 'Enter your username',
                 border: OutlineInputBorder(),
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             TextField(
-              decoration: InputDecoration(
+              controller: _passwordController,
+              decoration: const InputDecoration(
                 prefixIcon: Icon(Icons.lock),
                 labelText: 'LG Password',
                 hintText: 'Enter your password',
                 border: OutlineInputBorder(),
               ),
-              obscureText: true, // Hides the password
+              obscureText: true,
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             TextField(
-              decoration: InputDecoration(
+              controller: _sshPortController,
+              decoration: const InputDecoration(
                 prefixIcon: Icon(Icons.settings_ethernet),
                 labelText: 'SSH Port',
                 hintText: '22',
@@ -52,9 +88,10 @@ class SettingsPage extends StatelessWidget {
               ),
               keyboardType: TextInputType.number,
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             TextField(
-              decoration: InputDecoration(
+              controller: _rigsController,
+              decoration: const InputDecoration(
                 prefixIcon: Icon(Icons.memory),
                 labelText: 'No. of LG rigs',
                 hintText: 'Enter the number of rigs',
@@ -62,16 +99,24 @@ class SettingsPage extends StatelessWidget {
               ),
               keyboardType: TextInputType.number,
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             TextButton(
-              style: ButtonStyle(
-                  backgroundColor: MaterialStatePropertyAll(Colors.green),
-                  shape: MaterialStatePropertyAll(RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(50))))),
-              onPressed: null,
-              child: Padding(
+              style: const ButtonStyle(
+                backgroundColor: MaterialStatePropertyAll(Colors.green),
+                shape: MaterialStatePropertyAll(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(50),
+                    ),
+                  ),
+                ),
+              ),
+              onPressed: () {
+                _saveSettings();
+              },
+              child: const Padding(
                 padding: EdgeInsets.all(8.0),
                 child: Center(
                   child: Row(
