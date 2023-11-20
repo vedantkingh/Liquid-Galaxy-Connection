@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lg_connection/components/connection_flag.dart';
 import '../components/reusable_card.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -22,6 +23,7 @@ class HomeScreen extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
+          Padding(padding: const EdgeInsets.all(10.0), child: ConnectionFlag()),
           Expanded(
             child: Row(
               children: [

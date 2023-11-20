@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lg_connection/components/connection_flag.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SettingsPage extends StatefulWidget {
@@ -45,6 +46,9 @@ class _SettingsPageState extends State<SettingsPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
+            Padding(
+                padding: const EdgeInsets.only(bottom: 10),
+                child: ConnectionFlag()),
             TextField(
               controller: _ipController,
               decoration: const InputDecoration(
