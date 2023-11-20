@@ -48,7 +48,9 @@ class _SettingsPageState extends State<SettingsPage> {
           children: <Widget>[
             Padding(
                 padding: const EdgeInsets.only(bottom: 10),
-                child: ConnectionFlag()),
+                child: ConnectionFlag(
+                  status: false,
+                )),
             TextField(
               controller: _ipController,
               decoration: const InputDecoration(

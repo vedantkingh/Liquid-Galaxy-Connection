@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:lg_connection/components/connection_flag.dart';
 import '../components/reusable_card.dart';
 
+bool connectionStatus = true;
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -15,7 +17,12 @@ class HomeScreen extends StatelessWidget {
             icon: const Icon(Icons.settings),
             onPressed: () {
               // Navigate to the settings page using the named route
-              Navigator.pushNamed(context, '/settings');
+              // var status = Navigator.pushNamed(context, '/settings');
+              // if (status == true) {
+              //   connectionStatus = true;
+              // } else {
+              //   connectionStatus = false;
+              // }
             },
           ),
         ],
@@ -23,7 +30,11 @@ class HomeScreen extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Padding(padding: const EdgeInsets.all(10.0), child: ConnectionFlag()),
+          Padding(
+              padding: const EdgeInsets.only(top: 10, left: 10),
+              child: ConnectionFlag(
+                status: connectionStatus,
+              )),
           Expanded(
             child: Row(
               children: [
