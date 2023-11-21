@@ -17,12 +17,12 @@ class HomeScreen extends StatelessWidget {
             icon: const Icon(Icons.settings),
             onPressed: () {
               // Navigate to the settings page using the named route
-              // var status = Navigator.pushNamed(context, '/settings');
-              // if (status == true) {
-              //   connectionStatus = true;
-              // } else {
-              //   connectionStatus = false;
-              // }
+              var status = Navigator.pushNamed(context, '/settings');
+              if (status == true) {
+                connectionStatus = true;
+              } else {
+                connectionStatus = false;
+              }
             },
           ),
         ],
