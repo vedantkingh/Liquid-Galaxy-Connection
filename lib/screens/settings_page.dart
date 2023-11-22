@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lg_connection/components/connection_flag.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+// TODO : Import file
+import 'package:lg_connection/connections/ssh.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({Key? key}) : super(key: key);
@@ -121,6 +123,7 @@ class _SettingsPageState extends State<SettingsPage> {
               ),
               onPressed: () {
                 _saveSettings();
+                SSH().connectToLG();
               },
               child: const Padding(
                 padding: EdgeInsets.all(8.0),
