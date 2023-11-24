@@ -1,5 +1,4 @@
 // TODO 2: Import 'dartssh2' package
-import 'package:dartssh2/dartssh2.dart';
 
 import 'dart:async';
 import 'dart:io';
@@ -12,7 +11,7 @@ class SSH {
   late String _username;
   late String _passwordOrKey;
   late String _numberOfRigs;
-  SSHClient? _client;
+  // SSHClient? _client;
 
   // Initialize connection details from shared preferences
   Future<void> initConnectionDetails() async {
@@ -38,18 +37,18 @@ class SSH {
     }
   }
 
-  Future<SSHSession?> execute() async {
-    try {
-      if (_client == null) {
-        print('SSH client is not initialized.');
-        return null;
-      }
-      //   TODO 4: Execute a demo command: echo "search=Lleida" >/tmp/query.txt
-    } catch (e) {
-      print('An error occurred while executing the command: $e');
-      return null;
-    }
-  }
+  // Future<SSHSession?> execute() async {
+  //   try {
+  //     if (_client == null) {
+  //       print('SSH client is not initialized.');
+  //       return null;
+  //     }
+  //     //   TODO 4: Execute a demo command: echo "search=Lleida" >/tmp/query.txt
+  //   } catch (e) {
+  //     print('An error occurred while executing the command: $e');
+  //     return null;
+  //   }
+  // }
 
   // DEMO above, all the other functions below
 //   TODO 11: Make functions for each of the tasks in the home screen

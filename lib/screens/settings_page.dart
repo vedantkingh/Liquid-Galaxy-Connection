@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:lg_connection/components/connection_flag.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 // TODO 5: Import the ssh file and the dartssh2 package
-import 'package:lg_connection/connections/ssh.dart';
-import 'package:dartssh2/dartssh2.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({Key? key}) : super(key: key);
@@ -15,7 +13,7 @@ class SettingsPage extends StatefulWidget {
 class _SettingsPageState extends State<SettingsPage> {
   bool connectionStatus = false;
   // TODO 8: Declare SSH Instance
-  late SSH ssh;
+  // late SSH ssh;
 
   Future<void> _connectToLG() async {
     // TODO 10: Connect to Liquid Galaxy Rig
@@ -224,9 +222,10 @@ class _SettingsPageState extends State<SettingsPage> {
                 ),
                 onPressed: () async {
                   // TODO 7: Initialize SSH and execute the demo command and test
-                  // SSH ssh = SSH(); //Re-initialization of the SSH instance to avoid errors for beginners
+                  // SSH ssh =
+                  //     SSH(); //Re-initialization of the SSH instance to avoid errors for beginners
                   // await ssh.connectToLG();
-                  // SSHSession? execResult = await ssh.execute();
+                  // SSHSession? execResult = await ssh.sendKML();
                   // if (execResult != null) {
                   //   print('Command executed successfully');
                   // } else {

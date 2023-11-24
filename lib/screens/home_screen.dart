@@ -7,8 +7,6 @@ import '../components/reusable_card.dart';
 bool connectionStatus = false;
 // TODO 17: Initialize const String searchPlace
 
-// TODO 20: Make a KML and initialize const String KML
-
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -99,21 +97,45 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           //
           Expanded(
-            child: ReusableCard(
-              colour: Colors.blue,
-              onPress: () async {
-                // TODO 16: Implement rebootLG() as async task and test
-              },
-              cardChild: const Center(
-                child: Text(
-                  'REBOOT LG',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 40,
-                    fontWeight: FontWeight.w700,
+            child: Row(
+              children: [
+                Expanded(
+                  child: ReusableCard(
+                    colour: Colors.blue,
+                    onPress: () async {
+                      // TODO 16: Implement clearKML() as async task and test
+                    },
+                    cardChild: const Center(
+                      child: Text(
+                        'CLEAN KML',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 40,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    ),
                   ),
                 ),
-              ),
+                Expanded(
+                  child: ReusableCard(
+                    colour: Colors.blue,
+                    onPress: () async {
+                      // TODO 21: Implement rebootLG() as async task and test
+                    },
+                    cardChild: const Center(
+                      child: Text(
+                        'REBOOT LG',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 40,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
           Expanded(
@@ -142,7 +164,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: ReusableCard(
                     colour: Colors.blue,
                     onPress: () async {
-                      //   TODO 21: Implement sendKML(String KML) as async task and test
+                      //   TODO 20: Implement sendKML() as async task
                     },
                     cardChild: const Center(
                       child: Text(

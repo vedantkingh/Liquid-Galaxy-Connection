@@ -13,7 +13,6 @@ dependencies:
   cupertino_icons: ^1.0.2
   shared_preferences: ^2.2.2
 #  TODO 1: Add 'dartssh2' package from https://pub.dev/packages/dartssh2.
-  dartssh2: ^2.8.2
 
 dev_dependencies:
   flutter_test:
