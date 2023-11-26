@@ -1,16 +1,5 @@
 # lg_connection
 
-A new Flutter project.
+This project is made in order for Liquid Galaxy Wanna-be Contributors to practice connecting their Android devices with Liquid Galaxy Rig. Just follow along the several TODOs in the project, you can follow along with me right here:
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+[![IMAGE ALT TEXT](https://i.ytimg.com/vi/Dj26c3-Ha9A/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBc5NyU_Ap_xhxU-a8LBtMaOPh66Q)](https://www.youtube.com/live/Dj26c3-Ha9A?feature=shared)
