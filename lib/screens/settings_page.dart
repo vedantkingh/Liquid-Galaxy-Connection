@@ -225,7 +225,7 @@ class _SettingsPageState extends State<SettingsPage> {
                   // SSH ssh =
                   //     SSH(); //Re-initialization of the SSH instance to avoid errors for beginners
                   // await ssh.connectToLG();
-                  // SSHSession? execResult = await ssh.sendKML();
+                  // SSHSession? execResult = await ssh.execute();
                   // if (execResult != null) {
                   //   print('Command executed successfully');
                   // } else {
